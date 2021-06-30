@@ -20,8 +20,8 @@
 -}
 
 {-# LANGUAGE TemplateHaskell   #-}
-{-# LANGUAGE DeriveFoldable    #-}
-{-# LANGUAGE DeriveFunctor     #-}
+-- {-# LANGUAGE DeriveFoldable    #-}
+-- {-# LANGUAGE DeriveFunctor     #-}
 {-# LANGUAGE DeriveTraversable #-}
 
 module Control.Lens.Tutorial (
@@ -868,7 +868,7 @@ data Atom = Atom { _element :: String, _point :: Point } deriving (Show)
 
 data Point = Point { _x :: Double, _y :: Double } deriving (Show)
 
-data Molecule = Molecule { _atoms :: [Atom] } deriving (Show)
+newtype Molecule = Molecule { _atoms :: [Atom] } deriving (Show)
 
 data Pair a = Pair a a deriving (Functor, Foldable, Traversable)
 
